@@ -1,0 +1,19 @@
+{
+    "dependencies": {
+        "express": "^4.18.1",
+        "touch-cli": "^0.0.1"
+    },
+    "name": "session1_nodejs-introduce",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "node homework.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "()"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": ""
+}

@@ -1,0 +1,8 @@
+{
+    "data": [
+        { "id": 0, "name": "nam", "Gender": "M" },
+        { "id": 1, "name": "toan", "Gender": "M" },
+        { "id": 2, "name": "hoa", "Gender": "F" },
+        { "id": 3, "name": "ngoc", "Gender": "F" }
+    ]
+}
