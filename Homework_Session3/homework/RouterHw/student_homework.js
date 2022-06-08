@@ -20,7 +20,8 @@ const Student = [
   },
 ];
 
-studentRouterHw.get("/student", (req, res) => {
-  res.send(Student);
+studentRouterHw.post("/", (req, res, next) => {
+  res.json(Student);
+  next();
 });
 module.exports = studentRouterHw;

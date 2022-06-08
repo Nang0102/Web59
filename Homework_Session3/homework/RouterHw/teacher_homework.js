@@ -19,11 +19,13 @@ const Teacher = [
   },
 ];
 
-teacherRouterHw.get("/", (req, res) => {
+teacherRouterHw.get("/", (req, res, next) => {
   res.json(Teacher);
+  next();
 });
-teacherRouterHw.post("/", (req, res) => {
+teacherRouterHw.post("/", (req, res, next) => {
   res.json(Teacher);
+  next();
 });
 
 module.exports = teacherRouterHw;

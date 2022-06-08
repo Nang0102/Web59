@@ -7,13 +7,34 @@ const studentRouterHw = require("./homework/RouterHw/student_homework");
 const teacherRouterHw = require("./homework/RouterHw/teacher_homework");
 const subjectRouterHw = require("./homework/RouterHw/subject_homwork");
 const LMwHomework = require("./homework/middlewareHw/logging_middleware");
-const studentMiddlewareHw = require("./homework/middlewareHw/student_middlewareHw");
+const userMiddleware = require("./homework/middlewareHw/User_middleware");
+const countObjectMw = require("./homework/middlewareHw/countObject_middleware");
 
 app.use(bodyParser.json({ extended: true }));
 
-app.use("/student", LMwHomework, studentMiddlewareHw, studentRouterHw);
-app.use("/teacher", LMwHomework, teacherRouterHw);
-app.use("/subject", LMwHomework, subjectRouterHw);
+app.use(
+  "/student",
+  LMwHomework,
+  userMiddleware,
+  studentRouterHw,
+  countObjectMw
+);
+app.use(
+  "/teacher",
+  LMwHomework,
+  userMiddleware,
+  teacherRouterHw,
+  studentRouterHw,
+  countObjectMw
+);
+app.use(
+  "/subject",
+  LMwHomework,
+  userMiddleware,
+  subjectRouterHw,
+  studentRouterHw,
+  countObjectMw
+);
 
 app.listen(port, (err) => {
   if (err) {

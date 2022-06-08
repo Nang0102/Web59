@@ -16,8 +16,9 @@ const Subject = [
   },
 ];
 
-subjectRouterHw.get("/Subject", (req, res) => {
+subjectRouterHw.post("/", (req, res, next) => {
   res.send(Subject);
+  next();
 });
 
 module.exports = subjectRouterHw;
