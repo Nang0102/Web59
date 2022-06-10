@@ -1,0 +1,16 @@
+{
+    "name": "homework_session2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "start:mai": "nodemon index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.18.1",
+        "express-load": "^1.1.16"
+    }
+}

@@ -28,12 +28,22 @@ teacherRouter.get("/", (req, res) => {
 // Tao method POST ==> them phan tu vao mang teacher
 
 teacherRouter.post("/", (req, res) => {
-  // console.log("This is request body", req.body);
+  // teacher.push({
+  //   id: req.body.id,
+  //   name: req.body.name,
+  //   job: req.body.job,
+  // }
+  // );
+  const { id, name, job } = req.body;
+  if (!name) {
+    name = "deafault name";
+  }
   teacher.push({
-    id: req.body.id,
-    name: req.body.name,
-    job: req.body.job,
+    id: id,
+    name: name,
+    job: job,
   });
+
   console.log("This is request body", req.body);
   res.status(200);
   res.json(teacher);
@@ -50,10 +60,20 @@ teacherRouter.put("/:id", (req, res) => {
 
 // DELETE xoa phan tu cuoi cung trong mang teacher
 
-teacherRouter.delete("/:id", (req, res) => {
-  teacher.splice(req.params.id, 1);
-  res.json(teacher);
-  res.json("Hello from teacher router");
-});
+// teacherRouter.delete("/:id", (req, res) => {
+//   teacher.splice(req.params.id, 1);
+//   res.json(teacher);
+//   res.json("Hello from teacher router");
+// });
+let array1 = ["code", "source", { name: "website" }];
+let popped = array1.pop();
+console.log(array1, popped);
 
 module.exports = teacherRouter;
+
+// push: thêm phần tử vào cuối mảng
+// pop : xóa phần tử cuối mảng
+// pop() removes the last element of an array.
+// push() adds an element to the end of an array.
+// shift() removes the first element.  loại bỏ phần tử đầu tiên
+// unshift() adds an element to the beginning of the array.thêm một phần tử vào đầu mảng

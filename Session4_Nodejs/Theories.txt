@@ -1,0 +1,29 @@
+Authentication and Authorization
+Authentication: 
+Để xác minh người dùng 
+Gồm: Signup, Login, Http Request (Get, Post, Put,…)
+Authorization
+Có thể hiểu là hệ thống ủy quyền cho người dùng có những quyền gì
+Ví dụ: Một chức năng mà có người dùng chỉ có thể xem, có người có thể xem và cả sửa
+Cơ chế xác thực
+Ngoài Session và Cookies là những cơ chế cũ ra thì vẫn còn 1 vài kỹ thuật nữa được sử để xác thực đăng nhập (authentication). Trong đó có JWT (hiện tại đang rất phổ biến)
+Đầu tiên mình sẽ tìm hiểu về cơ chế session nhé, sau đó sẽ là JWT
+Cơ chế xác thực bằng Session
+Với cơ chế này thì sau khi đăng nhập, server sẽ tạo ra session cho user và lưu vào đâu đó (db). Sau đó một session ID sẽ được lưu vào trong cookies của trình duyệt. Trong khi user truy cập vào website thì session ID đó sẽ được gửi kèm theo trong request. Sau khi user logout thì session sẽ bị xóa đi
+Nhược điểm của cơ chế này: sessions lưu trữ trên server, khả năng mở rộng là một vấn đề khi có một lượng lớn người dùng sử dụng hệ thống cùng 1 lúc
+Ưu điểm: Dễ thao tác
+
+
+Cơ chế sử dụng JWT (Cái này ngon nè)
+JWT là gì?
+JWT là viết tắt của "JSON Web Token" – một tiêu chuẩn mở (RFC 7519) cho việc bảo việc trong truyền tải dữ liệu giữa các endpoint
+Ví dụ: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+Gồm 3 phần ngăn cách nhau bởi dấu “.” nhé: Header, Payload, Signature
+Muốn decode thì ae vào trang này nhé “https://jwt.io”, sau khi decode nó sẽ ra những file json chứ thông tin người dùng
+Ae vào đây đọc để hiểu chi tiết hơn “https://topdev.vn/blog/jwt-la-gi/”
+Server xác thực mã JWT client gửi lên kiểu gì?
+ Khi nhận được mã Token gửi lên từ phía client, Server sẽ lấy phần Signature (chữ ký) bên trong mã token đó, và verify (kiểm tra ) xem cái chữ ký nhận được có đúng chính xác là được HASH (băm) bởi cùng một thuật toán và chuỗi “Secret” như trên hay không. (chuỗi Secret là cái jwtKey ý)
+Phần thực hành Code
+ Anh Thế Anh đã hướng dẫn khá kỹ, mọi người xem lại và vướng chỗ nào thì ib Huy nhé.
+“https://www.youtube.com/watch?v=G2JUxeSHtpE”
+

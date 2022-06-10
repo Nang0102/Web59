@@ -33,7 +33,7 @@ fs.readFile("Mindxs.txt", "utf8", (err, data) => {
 
 // const { express } = require("./exppress_session1");
 
-// CRUD: create, read, update, delete
+// HOMEWORK:  CRUD: create, read, update, delete
 
 // Creat
 
