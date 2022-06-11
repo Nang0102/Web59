@@ -1,0 +1,16 @@
+{
+    "name": "homework_session4",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "start:dev": "nodemon index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.18.1",
+        "jsonwebtoken": "^8.5.1"
+    }
+}
