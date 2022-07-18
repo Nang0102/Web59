@@ -26,15 +26,24 @@ const { sum, sub } = require("./cusom_module/math");
 
 // CRUD: create, delete, update, read
 
-const data = fs.readFileSync("./students.json");
-const students = JSON.parse(data); // lấy data ra để convert thư viện ra arr bt để xử lí
+const data = fs.readFileSync("./studentshw7.json");
+const studentshw7 = JSON.parse(data); // lấy data ra để convert thư viện ra arr bt để xử lí
 
-const newStudent = {
-  id: 2,
-  name: "Nga",
-  gender: "F",
-};
-students["data"].push(newStudent);
+studentshw7.forEach((student, index) => {
+  if (index % 2 === 0) {
+    student["role"] = "admin";
+  } else {
+    student["role"] = "student";
+  }
+  student["Password"] = "ThisisPassword123";
+});
+
+// const newStudent = {
+//   id: 2,
+//   name: "Nga",
+//   gender: "F",
+// };
+// students["data"].push(newStudent);
 
 // students["data"].splice(1, 1); //xóa phần tử số 1 ở vtri số 1
 
@@ -43,13 +52,13 @@ students["data"].push(newStudent);
 // console.log("data:", JSON.parse(data));
 
 // console.log(sum(1, 2));
-const newStudents = {
-  data: [
-    {
-      id: 1,
-      name: "toan",
-      Gender: "M",
-    },
-  ],
-};
-fs.writeFileSync("./students.json", JSON.stringify(newStudents));
+// const newStudents = {
+//   data: [
+//     {
+//       id: 1,
+//       name: "toan",
+//       Gender: "M",
+//     },
+//   ],
+// };
+fs.writeFileSync("./studentshw7.json", JSON.stringify(studentshw7));

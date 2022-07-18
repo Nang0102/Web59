@@ -1,0 +1,47 @@
+1.Database là gì
+
+Database là một đống dữ liệu được tổ chức (ví dụ như bảng, key-value) và thường được truy cập từ hệ thống máy tính hoặc tồn tại dưới dạng tập tin trong hệ quản trị cơ sở dữ liệu
+Một số hệ quản trị cơ sở dữ liệu phổ biến:
+MySQL *
+MSSQL
+PostgreSQL
+
+2.MongoDB *
+
+MongoDB
+MongoDB là một hệ quản trị cơ sở dữ liệu dạng “document” (key-value), là một dạng NoSQL database (k quan hệ). Với dạng document của dữ liệu, MongoDB cũng có thể lưu trữ dữ liệu không có cấu trúc định sẵn.
+Một document ở trong MongoDB có thể hiểu đơn giản là một object của Javascript. Với việc là một object thì document MongoDB có thể dễ dàng thêm / bớt các trường dữ liệu. MongoDB không bắt buộc các trường dữ liệu của tất cả các document trong một collection đều cần phải có các trường dữ liệu giống nhau.
+Ưu điểm:
+Cấu trúc dữ liệu mềm dẻo, phù hợp với các ứng dụng có sự thay đổi nhiều về dữ liệu
+Không có những câu lệnh join và ràng buộc phức tạp giữa các collection. Tăng tốc quá trình truy xuất và cập nhật dữ liệu
+Dễ dàng mở rộng theo nhiều cách
+API đơn giản và tương đồng với Javascript. Tạo điều kiện để chúng ta trở thành một full stack developer
+
+3.Cài đặt MongoDB
+
+Cài đặt thì mỗi hệ điều hành khác nhau nên đề xuất là dùng docker. Nhưng nếu mn k cài đc docker thì có thể cài luôn mongo vào máy
+
+4. Connect mongo trong NodeJS
+
+Đầu tiên mn cài đặt thư viện: npm install mongodb
+Rồi kết nối bằng đoạn code (index.js): 
+const { MongoClient } = require('mongodb');
+
+// Connection URL
+const url = 'mongodb://localhost:27017';
+const client = new MongoClient(url);
+
+// Database Name
+const dbName = 'myProject';
+
+function connectToDB() {
+  await client.connect();
+  console.log('Connected successfully to server');
+  const db = client.db(dbName);
+  const collection = db.collection('documents');
+
+  return 'done.';
+}
+
+connectToDB()
+

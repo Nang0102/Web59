@@ -1,0 +1,26 @@
+step1: Create an application with expressJS
+ step2: Tạo arr User:
+  [ 
+      { "id": 1, "name": "Nga", "password": "12345", "role": "student" },
+       { "id": 2, "name": "Manh", "password": "54321", "role": "teacher" },
+        { "id": 3, "name": "Hoang", "password": "67891", "role": "Parent" }, ]
+
+step 3: Tạo list Student:
+
+[ { "id": 1, "name": "Van", "grade": 9, },
+ { "id": 2, "name": "Hung", "grade": 8, }, 
+ { "id": 3, "name": "Huong", "grade": 10, }, ]
+
+step4: All user được quyền  truy cập list student
+
+
+create api login
+Input: user name + password
+Output: JWT (Encrypt alogorithm  + signing Key)
+
+Create middleware de: 
+Authenmiddle ware de check token phia client da bao gom thong tin nguoi dung trong user.
+Neu ok ==>  return ve student. If not return Unauthorize message
+
+
+step5: chỉ có user với role là teacher được quyền sửa điểm học sinh

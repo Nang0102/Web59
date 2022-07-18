@@ -5,15 +5,17 @@ const fimls = require("../constants/fimls");
 //  Tất cả đèu có thể truy cập vào phim.
 filmRouter.get("/", (req, res) => {
   // console.log("this is request client");
-  if (userRole === "guest") {
-    res.json(fimls.filter((el) => el.type === "free"));
-  }
+  // if (userRole === "guest") {
+  //   res.json(fimls.filter((el) => el.type === "free"));
+  // }
   {
     res.json(fimls);
   }
 });
 
-// filmRouter.put("/", (req, res) => {
+// filmRouter.post("/", (req, res) => {
+//   if (userRole === "admin") {
+//   }
 //   res.json(fimls);
 // });
 

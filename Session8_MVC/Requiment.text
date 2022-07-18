@@ -1,0 +1,10 @@
+Tạo app xem việc mã hóa password ntn? sử dụng mongodb. chứa 1 collection User
+có 2 api. 1 là sign up, (password sd bcrypt để lưu mã hóa đó trong database )
+1: Create DB User_Management
+2: Create collection User
+3: Connect Mongo --> Express
+4: Define api signup: 
+   -Post:  Create User with encrypt password(using bycrypt)
+5: Define api Login :
+ - POST: send user info( user name, password) ==> compareSync ==> double check db info
+ 
